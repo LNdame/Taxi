@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ansteph.com.taxi">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality. 
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/TaxiMaterialTheme">
+        <activity
+            android:name=".view.Landing"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".view.Registration.Registration"
+            android:label="@string/title_activity_registration" />
+        <activity
+            android:name=".view.TaxiSplash"
+            android:label="@string/title_activity_taxi_splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.Registration.RegistrationConfirmation"
+            android:label="@string/title_activity_registration_confirmation" />
+
+        <!-- SMS Receiver -->
+        <receiver android:name=".receiver.SmsReceiver">
+            <intent-filter android:priority="99999">
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Intent service -->
+        <service
+            android:name=".service.HttpService"
+            android:exported="false" />
+
+        <activity
+            android:name=".view.CallACab.Requester"
+            android:label="@string/title_activity_requester" />
+        <activity
+            android:name=".view.FetchAClient.Responder"
+            android:label="@string/title_activity_responder" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"/>
+        <activity
+            android:name=".view.CallACab.Pick_DesMapActivity"
+            android:label="@string/title_activity_pick__des_map" />
+
+        <service
+            android:name=".service.FetchAddressIntentService"
+            android:exported="false"></service>
+    </application>
+
+</manifest>

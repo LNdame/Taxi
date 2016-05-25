@@ -1,0 +1,57 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ansteph.com.taxi.view.CallACab.RequesterLanding">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ViewAnimator
+        android:layout_width="match_parent"
+        android:layout_height="177dp"
+        android:id="@+id/viewAnimator"
+        android:layout_gravity="center_horizontal|top"
+        android:background="@color/colorAccent" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Call a cab"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:background="@color/colorAccent"
+        android:id="@+id/btnCaller"
+        android:layout_gravity="center" />
+
+
+
+
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="226dp"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal|bottom"
+    >
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:layout_gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:text="Previously used"/>
+
+    </RelativeLayout>
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="206dp"
+        android:id="@+id/listView"
+        android:layout_gravity="center_horizontal|bottom" />
+
+</LinearLayout>
+
+
+</FrameLayout>
